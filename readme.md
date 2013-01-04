@@ -39,7 +39,7 @@ window.addEventListenser('perf', function(perf) {
 
 #### 2.3 performance life cycle chart
 
-![http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/NavigationTiming/timing-overview.png](w3c)
+![performance life cycle chart](http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/NavigationTiming/timing-overview.png)
 
 ### 3. Testcase
 
