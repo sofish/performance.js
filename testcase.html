@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>performance timming of a page</title>
+  <link rel="stylesheet" href="http://typo.sofish.de/typo.css">
+  <style type="text/css">th{text-align:right;}</style>
+</head>
+<body style="padding:50px" class="typo">
+
+<h1>Page Performance</h1>
+
+<pre>
+// 使用方法：
+window.addEventListenser('perf', function(perf) {
+  console.log(perf.detail);
+})
+</pre>
+
+<ol>
+  <li>IE9 上使用时候请注意一下使用的是不是 <code>&lt;!Doctype html&gt;</code></li>
+  <li id="performance">
+    loading
+  </li>
+</ol>
+
+<h4># 测试：拖时间，引入一个 iFrame</h4>
+
+<iframe width="100%" src="http://baidu.com"></iframe>
+
+<script type="text/javascript" src="./performance.js"></script>
+<script>
+~function(w, d) {
+  w.addEventListener('perf', function(perf) {
+    var table = ['<table>']
+      , detail = perf.detail;
+
+    for(var p in detail) {
+      if(detail.hasOwnProperty(p)) table.push('<tr><th>' + p + '</th><td>' + detail[p]/1000 + 's</td>');
+    }
+
+    table.push('</table>');
+    d.querySelector('#performance').innerHTML = table.join('');
+  })
+}(window, document)
+</script>
+
+</body>
+</html>
