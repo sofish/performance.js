@@ -3,7 +3,7 @@
 // caculate performance timing of a web page
 (function(win) {
 
-  if(win.performance === 'undefined') return;
+  if(typeof win.performance === 'undefined') return;
 
   var Perf = {};
 
