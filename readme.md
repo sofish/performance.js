@@ -7,7 +7,7 @@ Install the `performance.js` file in the page, and listen to the `perf` event:
 ```html
 <script src="./performance.js"></script>
 <script>
-window.addEventListenser('perf', function(perf) {
+window.addEventListener('perf', function(perf) {
   console.log(perf.detail);
 })
 </script>
